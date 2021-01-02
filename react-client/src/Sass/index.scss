@@ -1,0 +1,43 @@
+@import './colors';
+
+@import '@material/react-layout-grid/index';
+@import '@material/react-text-field/index';
+@import '@material/react-button/index';
+@import '@material/react-top-app-bar/index';
+@import '@material/react-material-icon/index';
+@import '@material/react-layout-grid/index';
+@import '@material/react-card/index';
+@import '@material/react-typography/index';
+@import '@material/react-icon-button/index';
+@import '@material/react-linear-progress/index';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Wrapper{
+  background-color: $mdc-theme-background;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: $mdc-theme-on-surface;
+  padding-top: 64px;
+}
+
+.mdc-card-title{
+  overflow-x: hidden;
+  white-space: nowrap;
+}

@@ -1,0 +1,170 @@
+@import './colors';
+.Game{
+  max-width: 1440px;
+  background-color: $mdc-theme-background;
+}
+
+@media (max-height: 800px) {
+  .no-center{
+    height: 800px;
+  }
+}
+
+.no-center{
+  justify-content: start;
+}
+
+.game-interaction{
+  max-width: 256px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.action-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 256px;
+}
+
+.act-btn{
+  margin: 5px;
+  height: 56px;
+  width: calc(50% - 2.5);
+  max-width: 256px;
+  min-width: 61.5x;
+}
+
+.pass-progress{
+  width: 100%;
+  max-width: 256px;
+  margin: 5px;
+}
+
+.number-field,
+.act-btn{
+  width: 100%;
+  max-width: 256px;
+  margin: 5px;
+  height: 56px;
+}
+
+.stack-sum{
+  transition: all .2s ease-in;
+}
+
+.stack-sum-transition{
+  transform: translateY(-20px);
+}
+
+@media (min-width: 296px) {
+  .act-btn{
+    width: 118px;
+  }
+}
+
+.user-wrapper{
+  margin: 10px;
+  text-align: center;
+  transition: all 1.5s ease-in-out;
+}
+
+.active > .user-icon-wrapper > img{
+  -webkit-box-shadow: 0px 0px 35px 0px rgba(252,252,252,0.7);
+  -moz-box-shadow: 0px 0px 35px 0px rgba(252,252,252,0.7);
+  box-shadow: 0px 0px 35px 0px rgba(252,252,252,0.7);
+}
+
+.faded{
+  opacity: 0.7;
+}
+
+.user-icon-wrapper > img{
+  border: solid 0px;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  transition: all .2s ease-out;
+}
+
+.player-caption{
+  margin: 0;
+  font-weight: 300;
+}
+
+.own-caption{
+  font-weight: 600;
+}
+
+.players{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+@media (min-width: 720px) {
+
+  .Game{
+    margin-top: 156px;
+  }
+
+  .players{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  // Player Icons und Stuff
+  .user-wrapper{
+    position: absolute;
+  }
+  .user-icon-wrapper > img{
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+  }
+  .user-icon-wrapper > img:hover {
+    transform: scale(1.1);
+  }
+
+  // N Spieler und Position X
+  .player-2-pos-1,
+  .player-4-pos-2,
+  .player-6-pos-3{
+    top: 100px; 
+  }
+
+  .player-3-pos-1,
+  .player-5-pos-2,
+  .player-6-pos-2{
+    left: calc(30% - 55px);
+    top: 200px;
+  }
+  .player-3-pos-2,
+  .player-5-pos-3,
+  .player-6-pos-4{
+    left: calc(70% - 55px);
+    top: 200px;
+  }
+
+  .player-4-pos-1,
+  .player-5-pos-1,
+  .player-6-pos-1{
+    left: calc(20% - 55px);
+    top: 380px;
+  }
+  .player-4-pos-3,
+  .player-5-pos-4,
+  .player-6-pos-5{
+    left: calc(80% - 55px);
+    top: 380px;
+  }
+
+}

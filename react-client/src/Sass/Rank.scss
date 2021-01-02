@@ -1,0 +1,43 @@
+.colorTopBar{
+    background-color: #FFC400;
+}
+
+.headlineColor {
+    color: #FFC400;
+    font-size: calc(2vw + 20px);
+}
+
+.hall-of-game-title{
+    color: #FFC400;
+    margin: 20px 0;
+}
+
+.rangliste{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 250px;
+    width: 98%;
+    max-width: 1440px;
+}
+
+.rank-player-card{
+    min-width: 180px;
+    width: 15%;
+    max-width: 250px;
+    margin: 10px;
+}
+
+.index-1{
+    background-color: #DAA520;
+    opacity: 1;
+}
+
+.index-2{
+    background-color: #C0C0C0;
+}
+
+.index-3{
+    background-color: #cc6633;
+}

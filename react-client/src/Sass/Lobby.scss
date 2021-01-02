@@ -1,0 +1,39 @@
+@import './colors.scss';
+
+.Lobby{
+    max-width: 1440px;
+}
+
+.player-cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.player-card,
+.status,
+.progress-bar-lobby{
+    width: 250px;
+    margin: 1rem;
+}
+.mdc-card-primary{
+    padding: 1rem;
+}
+
+.ownCard{
+    margin: 0;
+}
+
+.mdc-card-title,
+.mdc-card-subtitle{
+    margin: 0;
+}
+.mdc-card-subtitle,
+.member-count,
+.status{
+    color: rgba(255,255,255,.54);
+}
+
+.error{
+    color: $mdc-theme-secondary;
+}

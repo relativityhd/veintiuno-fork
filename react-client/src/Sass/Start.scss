@@ -1,0 +1,35 @@
+@import './colors.scss';
+
+.username-field{
+    width: 100%;
+    max-width: 356px;
+    min-width: 100px;
+}
+
+.join-btn{
+    height: 56px;
+}
+
+.join-btn,
+.username-field{
+    margin: 1rem;
+}
+
+.headline,
+.interaction,
+.fail-msg{
+    text-align: center;
+}
+
+.interaction{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: center;
+}
+
+.fail-msg{
+    color: $mdc-theme-secondary;
+    display: block;
+    min-height: 32px;
+}
