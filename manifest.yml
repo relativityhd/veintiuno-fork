@@ -9,9 +9,10 @@ applications:
   memory: 128M
   FORCE_HTTPS: true
 - name: veintiuno-backend
-  path: ./maven-server
+  path: ./maven-server/server
+  buildpacks:
+    - https://github.com/cloudfoundry/java-buildpack
   routes:
     - route: veintiuno-backend.eu-de.mybluemix.net
-  command: mvn exec:java
   memory: 128M
   FORCE_HTTPS: true
