@@ -27,7 +27,6 @@ hs_err_pid*
 
 # node_modules
 node_modules
-package-lock.json
 
 # ItelliJ
 .idea
