@@ -1,0 +1,12 @@
+{
+  "name": "express-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node express-server/src/main.js",
+    "build": "cd react-client && npm run build"
+  },
+  "author": "Tobias Hölzer <tobiashoelzer@hotmail.com>",
+  "license": "MIT"
+}
