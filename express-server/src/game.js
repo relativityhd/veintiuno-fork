@@ -1,5 +1,3 @@
-const { UserAction, UserHandle, GameInstance } = require('./handle')
-
 class MainGame {
   constructor() {
     this.moves = 0
@@ -15,7 +13,11 @@ class MainGame {
 
   removeGameMember(username) {
     const i = this.gameMember.findIndex((member) => member.username === username)
-    this.gameMember.splice(i, 1)
+    return this.gameMember.splice(i, 1)
+  }
+
+  isFull() {
+    return this.gameMember.length === 6
   }
 
   nextRound() {
@@ -43,7 +45,10 @@ class MainGame {
     } else {
       this.gameStack.push(this.gameStack.pop() + inputNumber)
     }
-    this.nextRound()
+    const winner = this.nextRound()
+    if (winner) {
+      return winner
+    }
     return new RoundInfo(this.gameMember[this.moves % this.gameMember.length], this.gameStack, this.moves)
   }
 
@@ -53,7 +58,10 @@ class MainGame {
     }
 
     this.gameStack.push(this.gameStack.pop() + this.gameStack.pop())
-    this.nextRound()
+    const winner = this.nextRound()
+    if (winner) {
+      return winner
+    }
     return new RoundInfo(this.gameMember[this.moves % this.gameMember.length], this.gameStack, this.moves)
   }
 }
@@ -61,7 +69,7 @@ class MainGame {
 class Player {
   constructor(username, ai) {
     this.username = username
-    this.admin = username === 'admin'
+    this.admin = false
     this.ai = ai
     this.active = false
   }
@@ -75,7 +83,7 @@ class Player {
   }
 
   getMoveAI(gameStack, moves, playernumber) {
-    return new UserAction('AI', 1)
+    return new UserAction('AI', 1) // TODO: AI
   }
 }
 

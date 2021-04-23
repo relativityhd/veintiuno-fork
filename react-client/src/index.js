@@ -3,30 +3,29 @@
 // index -> Sides -> Components
 // Sides: SickSocket -> Start -> Lobby -> Game -> Ranks
 // Imports von React Stuff
-import React from 'react';
-import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import * as serviceWorker from './serviceWorker'
 
 // Importiere eigenes Socket Modul
-import { connect, receive } from './Components/socketApi';
+import { connect, receive } from './Components/socketApi'
 
 // Importiere CSS (Sass) und die einzelnen Seiten-Komponenten
-import './Sass/index.scss';
-import SickSocket from './Sides/SickSocket';
-import Start from './Sides/Start';
-import Lobby from './Sides/Lobby';
-import Game from './Sides/Game';
-import Rank from './Sides/Rank';
+import './Sass/index.scss'
+import SickSocket from './Sides/SickSocket'
+import Start from './Sides/Start'
+import Lobby from './Sides/Lobby'
+import Game from './Sides/Game'
+import Rank from './Sides/Rank'
 
 // Verbinde mit dem Socket des Backends
-connect()
+connect(renderStart, renderNoSocket)
 
 // Globaler Benutzername, dient als Identifier
-let username = ""
+let username = ''
 function setUsername(name) {
   username = name
 }
-
 
 // Render 404-Seite zum DOM-Root (zur HTML Seite)
 function renderNoSocket() {
@@ -35,7 +34,7 @@ function renderNoSocket() {
       <SickSocket />
     </React.StrictMode>,
     document.getElementById('root')
-  );
+  )
 }
 
 // Render Username/Start-Seite zum DOM-Root (zur HTML Seite)
@@ -45,7 +44,7 @@ function renderStart() {
       <Start setUsername={setUsername} toLobby={renderLobby} />
     </React.StrictMode>,
     document.getElementById('root')
-  );
+  )
 }
 
 // Render Lobby-Seite zum DOM-Root (zur HTML Seite)
@@ -56,7 +55,7 @@ function renderLobby(players) {
       <Lobby username={username} players={players} leave={renderStart} toGame={renderGame} />
     </React.StrictMode>,
     document.getElementById('root')
-  );
+  )
 }
 
 // Render der Game-Seite zum DOM-Root (zur HTML Seite)
@@ -67,7 +66,15 @@ function renderGame(active, players, stack, moves) {
   // moves: Ganze Zahl, Anzahl an bisher getätigten Zügen
   ReactDOM.render(
     <React.StrictMode>
-      <Game username={username} activeplayer={active} players={players} stack={stack} moves={moves} leave={renderStart} toRank={renderRank} />
+      <Game
+        username={username}
+        activeplayer={active}
+        players={players}
+        stack={stack}
+        moves={moves}
+        leave={renderStart}
+        toRank={renderRank}
+      />
     </React.StrictMode>,
     document.getElementById('root')
   )
@@ -87,18 +94,8 @@ function renderRank(gameinfo) {
 // Rendere Standart Mäßig die 404 Page
 renderNoSocket()
 
-// Sobald der Socket sich mit dem Backend verbunden hat, rendere die Start Seite
-receive('connect', () => {
-  renderStart()
-})
-
-// Sobald der Socket die Verbindung mit dem Backend verloren hat, rendere wieder die 404 Page
-receive('disconnect', () => {
-  renderNoSocket()
-})
-
 // Irrelevant (glaube ich...)
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.unregister()
