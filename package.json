@@ -8,5 +8,9 @@
     "build": "cd react-client && npm run build"
   },
   "author": "Tobias Hölzer <tobiashoelzer@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": [
+    "express-server",
+    "react-client"
+  ]
 }

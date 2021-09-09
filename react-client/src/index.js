@@ -5,18 +5,16 @@
 // Imports von React Stuff
 import React from 'react'
 import ReactDOM from 'react-dom'
-import * as serviceWorker from './serviceWorker'
-
 // Importiere eigenes Socket Modul
-import { connect, receive } from './Components/socketApi'
-
+import { connect } from './Components/socketApi'
 // Importiere CSS (Sass) und die einzelnen Seiten-Komponenten
 import './Sass/index.scss'
+import * as serviceWorker from './serviceWorker'
+import Game from './Sides/Game'
+import Lobby from './Sides/Lobby'
+import Rank from './Sides/Rank'
 import SickSocket from './Sides/SickSocket'
 import Start from './Sides/Start'
-import Lobby from './Sides/Lobby'
-import Game from './Sides/Game'
-import Rank from './Sides/Rank'
 
 // Verbinde mit dem Socket des Backends
 connect(renderStart, renderNoSocket)

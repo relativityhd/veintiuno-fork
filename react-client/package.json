@@ -31,10 +31,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "setEnvWin": "SET SASS_PATH=.\\node_modules",
-    "setEnvMac": "export SASS_PATH=./node_modules"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "setEnvMac": "export SASS_PATH=./node_modules",
+    "lint": "eslint **/*.js --fix"
   },
   "browserslist": {
     "production": [
@@ -47,5 +45,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.0"
   }
 }

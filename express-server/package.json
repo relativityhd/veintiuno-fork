@@ -6,11 +6,15 @@
   "scripts": {
     "start": "node src/main.js",
     "dev": "nodemon src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.js --fix"
   },
   "author": "Tobias Hölzer <tobiashoelzer@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
