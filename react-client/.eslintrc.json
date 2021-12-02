@@ -17,5 +17,8 @@
     "plugins": [
         "react"
     ],
-    "rules": {}
+    "rules": {
+        "sort-imports": "warn",
+        "sort-keys": "warn"
+    }
 }
